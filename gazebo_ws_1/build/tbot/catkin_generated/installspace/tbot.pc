@@ -1,0 +1,8 @@
+prefix=/home/ratta/Gazebo/gazebo_ws_1/install
+
+Name: tbot
+Description: Description of tbot
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

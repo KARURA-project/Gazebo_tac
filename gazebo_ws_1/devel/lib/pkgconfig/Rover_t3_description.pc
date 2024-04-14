@@ -1,0 +1,8 @@
+prefix=/home/ratta/Gazebo/gazebo_ws_1/devel
+
+Name: Rover_t3_description
+Description: Description of Rover_t3_description
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

@@ -1,0 +1,48 @@
+<?xml version="1.0" ?>
+<robot name="rover" xmlns:xacro="http://www.ros.org/wiki/xacro" >
+
+<transmission name="r1_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="r1">
+    <hardwareInterface>VelocityJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="r1_actr">
+    <hardwareInterface>VelocityJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="r2_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="r2">
+    <hardwareInterface>VelocityJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="r2_actr">
+    <hardwareInterface>VelocityJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="l1_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="l1">
+    <hardwareInterface>VelocityJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="l1_actr">
+    <hardwareInterface>VelocityJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="l2_tran">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="l2">
+    <hardwareInterface>VelocityJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="l2_actr">
+    <hardwareInterface>VelocityJointInterface</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+</robot>

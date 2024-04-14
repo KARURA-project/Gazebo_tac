@@ -1,0 +1,368 @@
+<?xml version="1.0"?>
+<robot name="rover" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find rover_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find rover_description)/urdf/rover.trans" />
+<xacro:include filename="$(find rover_description)/urdf/rover.gazebo" />
+<xacro:include filename="$(find rover_description)/urdf/_d435.urdf.xacro" />
+
+<!-- base_footprint Definition -->
+<link name="base_footprint" />
+
+<link name="base_link">
+  <inertial>
+    <origin xyz="-0.0016095177665624077 -0.0027929867125647263 0.07928163348576818" rpy="0 0 0"/>
+    <mass value="20.0583312183218"/>
+    <inertia ixx="12.286392" iyy="5.420217" izz="15.1977" ixy="-0.145354" iyz="0.38667" ixz="0.222827"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://rover_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://rover_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="body_joint" type="fixed">
+    <origin xyz="-0.036 0 0.081" rpy="0 0 0" />
+    <parent link="base_footprint" />
+    <child  link="base_link" />
+</joint>
+
+
+<link name="chassis_1">
+  <inertial>
+    <origin xyz="0.03167866965335478 1.7687180528801824e-14 -0.15944646499867593" rpy="0 0 0"/>
+    <mass value="18.08378086030487"/>
+    <inertia ixx="1.630619" iyy="0.081138" izz="1.582709" ixy="0.0" iyz="0.0" ixz="-0.015402"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.19 -0.0 -0.075" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://rover_description/meshes/chassis_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.19 -0.0 -0.075" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://rover_description/meshes/chassis_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="chassis_2_1">
+  <inertial>
+    <origin xyz="-0.03167866965335492 1.0738645321058275e-15 -0.15944646499867604" rpy="0 0 0"/>
+    <mass value="18.083780860304827"/>
+    <inertia ixx="1.630619" iyy="0.081138" izz="1.582709" ixy="0.0" iyz="-0.0" ixz="0.015402"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.19 -0.0 -0.075" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://rover_description/meshes/chassis_2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.19 -0.0 -0.075" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://rover_description/meshes/chassis_2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wheel_1_1">
+  <inertial>
+    <origin xyz="0.05499999999999994 3.3041053548732435e-07 5.551115123125783e-16" rpy="0 0 0"/>
+    <mass value="5.93082575512982"/>
+    <inertia ixx="1.767651" iyy="0.982573" izz="0.982573" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.278 0.363731 0.135" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://rover_description/meshes/wheel_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.278 0.363731 0.135" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://rover_description/meshes/wheel_1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wheel_2_1">
+  <inertial>
+    <origin xyz="0.05499999999999994 -3.3041053537630205e-07 4.440892098500626e-16" rpy="0 0 0"/>
+    <mass value="5.93082575512982"/>
+    <inertia ixx="1.767651" iyy="0.982573" izz="0.982573" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.278 -0.363731 0.135" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://rover_description/meshes/wheel_2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.278 -0.363731 0.135" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://rover_description/meshes/wheel_2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wheel_4_1">
+  <inertial>
+    <origin xyz="-0.055000000000000104 3.3041053526527975e-07 4.718447854656915e-16" rpy="0 0 0"/>
+    <mass value="5.9308257551298"/>
+    <inertia ixx="1.767651" iyy="0.982573" izz="0.982573" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.278 0.363731 0.135" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://rover_description/meshes/wheel_4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.278 0.363731 0.135" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://rover_description/meshes/wheel_4_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wheel_3_1">
+  <inertial>
+    <origin xyz="-0.05499999999999999 -3.304105354318132e-07 4.996003610813204e-16" rpy="0 0 0"/>
+    <mass value="5.93082575512976"/>
+    <inertia ixx="1.767651" iyy="0.982573" izz="0.982573" ixy="-0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.278 -0.363731 0.135" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://rover_description/meshes/wheel_3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.278 -0.363731 0.135" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://rover_description/meshes/wheel_3_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+
+<joint name="j1" type="fixed">
+  <origin xyz="0.19 0.0 0.075" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="chassis_1"/>
+
+  
+  
+</joint>
+
+<joint name="j2" type="fixed">
+  <origin xyz="-0.19 0.0 0.075" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="chassis_2_1"/>
+
+</joint>
+
+<joint name="r1" type="continuous">
+  <origin xyz="0.088 -0.363731 -0.21" rpy="0 0 0"/>
+  <parent link="chassis_1"/>
+  <child link="wheel_1_1"/>
+  <axis xyz="-1.0 0.0 0.0"/>
+
+      <limit effort="100" velocity="100"/>
+      <joint_properties damping="0.0" friction="0.0"/>
+</joint>
+
+<joint name="r2" type="continuous">
+  <origin xyz="0.088 0.363731 -0.21" rpy="0 0 0"/>
+  <parent link="chassis_1"/>
+  <child link="wheel_2_1"/>
+  <axis xyz="-1.0 0.0 0.0"/>
+
+      <limit effort="100" velocity="100"/>
+      <joint_properties damping="0.0" friction="0.0"/>
+</joint>
+
+<joint name="l1" type="continuous">
+  <origin xyz="-0.088 -0.363731 -0.21" rpy="0 0 0"/>
+  <parent link="chassis_2_1"/>
+  <child link="wheel_4_1"/>
+  <axis xyz="-1.0 0.0 0.0"/>
+
+  
+      <limit effort="100" velocity="100"/>
+      <joint_properties damping="0.0" friction="0.0"/>
+</joint>
+
+<joint name="l2" type="continuous">
+  <origin xyz="-0.088 0.363731 -0.21" rpy="0 0 0"/>
+  <parent link="chassis_2_1"/>
+  <child link="wheel_3_1"/>
+  <axis xyz="-1.0 0.0 0.0"/>
+
+      <limit effort="100" velocity="100"/>
+      <joint_properties damping="0.0" friction="0.0"/>
+</joint>
+
+<gazebo>
+    <plugin name="differential_drive_controller"
+      filename="libgazebo_ros_diff_drive.so">
+      <commandTopic>cmd_vel</commandTopic>
+      <odometryTopic>odom</odometryTopic> 
+      <odometryFrame>odom</odometryFrame> 
+      <odometrySource>world</odometrySource>
+      <robotBaseFrame>base_link</robotBaseFrame>
+      <publishOdomTF>true</publishOdomTF>
+      <publishWheelTF>false</publishWheelTF>
+      <publishTf>1</publishTf>
+      <publishWheelJointState>false</publishWheelJointState>
+      <legacyMode>false</legacyMode>
+      <updateRate>30</updateRate>
+      <leftJoint>l2</leftJoint>
+      <rightJoint>r2</rightJoint>
+      <wheelSeparation>0.160</wheelSeparation>
+      <wheelDiameter>0.166</wheelDiameter>
+      <wheelAcceleration>1.8</wheelAcceleration>
+      <wheelTorque>50</wheelTorque>
+      <rosDebugLevel>Debug</rosDebugLevel>
+    </plugin>
+  </gazebo> 
+  <gazebo>
+    <plugin name="differential_drive_controller"
+      filename="libgazebo_ros_diff_drive.so">
+      <commandTopic>cmd_vel</commandTopic>
+      <robotBaseFrame>base_link</robotBaseFrame>
+      <publishWheelJointState>false</publishWheelJointState>
+      <legacyMode>false</legacyMode>
+      <updateRate>30</updateRate>
+      <leftJoint>l1</leftJoint>
+      <rightJoint>r1</rightJoint>
+      <wheelSeparation>0.160</wheelSeparation>
+      <wheelDiameter>0.166</wheelDiameter>
+      <wheelAcceleration>1.8</wheelAcceleration>
+      <wheelTorque>50</wheelTorque>
+      <rosDebugLevel>Debug</rosDebugLevel>
+    </plugin>
+  </gazebo> 
+
+  
+  <link name="gps_link" />
+  <joint name="gps_joint" type="fixed">
+    <parent link="base_link" />
+    <child link="gps_link" />
+  </joint>
+    
+  <gazebo>  
+      <plugin name="gps" filename="libhector_gazebo_ros_gps.so">  
+          <updateRate>10.0</updateRate>  
+          <topicName>gps/fix</topicName>  
+          <gaussianNoise>0.0 0.0 0.0</gaussianNoise>  
+          <offset>0 0 0</offset>  
+          <velocityGaussianNoise>0 0 0</velocityGaussianNoise>  
+          <frameId>gps_link</frameId>  
+      </plugin>  
+  </gazebo>
+
+
+  <xacro:property name="camera_link" value="0.05" /> <!-- Size of square 'camera' box -->
+
+
+  
+  <joint name="camera_joint" type="fixed">
+    <axis xyz="0 1 0" />
+    <origin xyz="0.0 0.3 0.17" rpy="0 0 1.57"/>
+    <parent link="base_link"/>
+    <child link="camera_link"/>
+  </joint>
+  
+
+
+  <!-- Camera -->
+  <link name="camera_link">
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+    <box size="${camera_link} ${camera_link} ${camera_link}"/>
+      </geometry>
+    </collision>
+
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+    <box size="${camera_link} ${camera_link} ${camera_link}"/>
+      </geometry>
+      <material name="red"/>
+    </visual>
+
+    <inertial>
+      <mass value="1e-5" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
+    </inertial>
+  </link>
+
+
+   <gazebo reference="camera_link">
+    <sensor type="camera" name="camera1">
+      <update_rate>30.0</update_rate>
+      <camera name="head">
+        <horizontal_fov>1.3962634</horizontal_fov>
+        <image>
+          <width>640</width>
+          <height>320</height>
+          <format>R8G8B8</format>
+        </image>
+        <clip>
+          <near>0.02</near>
+          <far>300</far>
+        </clip>
+        <noise>
+          <type>gaussian</type>
+          <!-- Noise is sampled independently per pixel on each frame.
+               That pixel's noise value is added to each of its color
+               channels, which at that point lie in the range [0,1]. -->
+          <mean>0.0</mean>
+          <stddev>0.007</stddev>
+        </noise>
+      </camera>
+      <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+        <alwaysOn>true</alwaysOn>
+        <updateRate>0.0</updateRate>
+        <cameraName>camera1</cameraName>
+        <imageTopicName>image_raw</imageTopicName>
+        <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+        <frameName>camera_link</frameName>
+        <hackBaseline>0.07</hackBaseline>
+        <distortionK1>0.0</distortionK1>
+        <distortionK2>0.0</distortionK2>
+        <distortionK3>0.0</distortionK3>
+        <distortionT1>0.0</distortionT1>
+        <distortionT2>0.0</distortionT2>
+      </plugin>
+    </sensor>
+  </gazebo>
+
+
+
+  <xacro:sensor_d435 name="depthcamera" topics_ns="depth" parent="base_link" publish_pointcloud="true">
+    <origin xyz="0 0.3 0.20" rpy="0 0 1.57" />
+  </xacro:sensor_d435> 
+
+</robot>
